@@ -1,14 +1,6 @@
 <form [formGroup]="cardForm">
-  <input formControlName="name" />
-  <!-- Have to wrap it with *ngIf because errors turn to null upon fulfilling -->
-  <ng-container *ngIf="cardForm.controls.name.errors">
-    <div *ngIf="cardForm.controls.name.errors.required">Value is required.</div>
-    <div *ngIf="cardForm.controls.name.errors.minlength">
-      Value you entered is
-      {{ cardForm.controls.name.errors.minlength.actualLength }} Enter at least
-      {{ cardForm.controls.name.errors.minlength.requiredLength }}
-    </div>
-  </ng-container>
+  <!-- Take FormControl and pass it down to Input, and wire it up with reusable Input -->
+  <app-input [control]="cardForm.get('name')"></app-input>
 </form>
 
 <!-- For debugging -->
