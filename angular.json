@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "creditcard"
+    }
+  },
+  "defaultProject": "creditcard",
+  "cli": {
+    "analytics": "329778dd-22d5-4b99-9dba-1320e5cc68b2"
+  }
 }
