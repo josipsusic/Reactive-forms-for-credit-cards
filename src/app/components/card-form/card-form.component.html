@@ -1,6 +1,6 @@
 <form [formGroup]="cardForm">
   <!-- Take FormControl and pass it down to Input, and wire it up with reusable Input -->
-  <app-input [control]="cardForm.get('name')"></app-input>
+  <app-input label="Name" [control]="cardForm.get('name')"></app-input>
 </form>
 
 <!-- For debugging -->
