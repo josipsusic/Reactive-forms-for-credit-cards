@@ -13,6 +13,9 @@ export class CardFormComponent implements OnInit {
       Validators.minLength(3),
       //Validators.pattern(/\s/)  must enter spaces, just example of pattern
     ]),
+    cardNumber: new FormControl(''),
+    expiration: new FormControl(''),
+    securityCode: new FormControl(''),
   });
 
   constructor() {
@@ -20,4 +23,8 @@ export class CardFormComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    console.log("submitted");
+  }
 }

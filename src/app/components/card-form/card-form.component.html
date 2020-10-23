@@ -1,6 +1,21 @@
-<form [formGroup]="cardForm">
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
   <!-- Take FormControl and pass it down to Input, and wire it up with reusable Input -->
   <app-input label="Name" [control]="cardForm.get('name')"></app-input>
+  <app-input
+    label="Card Number"
+    [control]="cardForm.get('cardNumber')"
+  ></app-input>
+  <app-input
+    label="Expiration"
+    [control]="cardForm.get('expiration')"
+  ></app-input>
+  <app-input
+    label="Security Code"
+    [control]="cardForm.get('securityCode')"
+  ></app-input>
+  <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">
+    Submit
+  </button>
 </form>
 
 <!-- For debugging -->
