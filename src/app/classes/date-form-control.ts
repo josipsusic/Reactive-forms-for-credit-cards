@@ -2,7 +2,12 @@ import { FormControl } from '@angular/forms';
 
 export class DateFormControl extends FormControl {
   //Override setValue method to run some custom code on input
-  setValue(value: string, options: any) {
+  setValue(value: string | null, options: any) {
+    if (!value) {
+      super.setValue('', { ...options, emitModelToViewChange: true });
+      return;
+    }
+
     // Disable everything except numbers or a forward slash
     if (value.match(/[^0-9|\/]/gi)) {
       // Then revert to the current value
